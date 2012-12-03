@@ -1,8 +1,9 @@
 (define (main)
   ((fusion:create-simple-gl-cairo '(width: 1280 height: 752))
-   (let ((posx 80.0))
+   (let ((posx 80.0) (magictopleft 0)(magictopright 0)(magicbottomleft 0) (magicbottomright 0))
      (lambda (cr)
        ;;(SDL_LogInfo SDL_LOG_CATEGORY_APPLICATION (object->string (SDL_GL_Extension_Supported "GL_EXT_texture_format_BGRA8888")))
+       
        (cairo_set_source_rgba cr 0.5 0.0 0.0 1.0)
        (cairo_rectangle cr 0.0 0.0 640.0 376.0)
        (cairo_fill cr)
