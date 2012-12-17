@@ -26,12 +26,6 @@
         (cons (car rest)
               (loop (cdr rest))))))
 
-(define (counter p)
-  (let loop ((counter 0))
-    (if (eq? counter p)
-        #t
-        (loop (+ counter 1)))))
-
 (define (main)
   ((fusion:create-simple-gl-cairo '(width: 1280 height: 752))
    (let ((posx 80.0) (count 35))
@@ -204,7 +198,6 @@
                 (key (SDL_Keysym-sym (SDL_KeyboardEvent-keysym kevt))))
            (if (eq? numberstate #f) (begin (cond ((= key SDLK_q)
                                                   (set! magictopleft #t)
-                                                  ;;(paint-rectangles (topleft #t))
                                                   )
                                                  ((= key SDLK_w)
                                                   (set! magictopright #t))
