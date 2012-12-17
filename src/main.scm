@@ -243,7 +243,7 @@
             (begin (set! started #t)
                    (set! failure #f)))))
         ((= type SDL_MOUSEBUTTONDOWN)
-         ;;(SDL_LogInfo SDL_LOG_CATEGORY_APPLICATION SDL_Cursor)
+         
          )
         ((= type SDL_FINGERDOWN)
          (SDL_LogInfo SDL_LOG_CATEGORY_APPLICATION "Finger down!"))
