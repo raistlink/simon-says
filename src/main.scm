@@ -107,8 +107,7 @@
                            (set! computeraux '())
                            (set! game-state 'success)
                            (set! round (+ round 1)))
-                    (set! game-state 'failure)))
-          
+                    (set! game-state 'failure)))  
           (if (eq? magic-state 'topleft)  
               (cairo_set_source_rgba cr 1.0 0.0 0.0 1.0)
               (cairo_set_source_rgba cr 0.5 0.0 0.0 1.0))
