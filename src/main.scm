@@ -26,7 +26,7 @@
          (computeraux '())
          (statecounter 0)
          (round 1)
-         (flabbergasting #f))
+         (success #f))
      (lambda (cr)
        (case game-state
          ((start-screen)
@@ -100,7 +100,7 @@
                 (set! count 35))
           (when (= (length playerinput) round)
                 (if (every = playerinput computeraux)
-                    (begin (set! flabbergasting #t)
+                    (begin (set! success #t)
                            (set! points (+ points (* 10 round)))
                            (set! playerinput '())
                            (set! computer computeraux)
