@@ -174,7 +174,6 @@
                 (set! game-state 'start-screen))
               'draw)))
        'draw))
-
    (lambda (event)
      (let ((type (SDL_Event-type event)))
        (cond
@@ -182,7 +181,6 @@
          (let* ((button (SDL_Event-button event))
                 (x (SDL_MouseButtonEvent-x button))
                 (y (SDL_MouseButtonEvent-y button)))
-           (SDL_LogInfo SDL_LOG_CATEGORY_APPLICATION (number->string x))
            (if (eq? game-state 'player-phase)
                (cond ((< x 640)
                       (if (< y 376)
@@ -284,8 +282,6 @@
                (if (eq? game-state 'start-screen)
                    (begin (set! game-state 'computer-phase)
                           (set! points 0))))))
-        ((= type SDL_FINGERDOWN)
-         (SDL_LogInfo SDL_LOG_CATEGORY_APPLICATION "Finger down!"))
         ((= type SDL_WINDOWEVENT)
          'handle-window-events)
         ((= type SDL_QUIT)
